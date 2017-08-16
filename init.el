@@ -16,33 +16,12 @@
 (global-linum-mode 1)
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-
-
 (load-theme 'leuven t)
-;; (load-theme 'material-light t)
-;;(load-theme 'material t)
-;; (load-theme 'monokai)
-;; (load-theme 'adwaita)
-
-;; (load-theme 'zenburn)
-;;(load-theme color-theme-sanityinc-tomorrow-day)
-;;(load-theme 'ritchie t)
-;;(load-theme 'greymatters)
-;; (load-theme 'solarized-light)
-;; (load-theme 'solarized-dark)
-;; (load-theme 'sanityinc-tomorrow-day)
-;;(load-theme 'sanityinc-tomorrow-night)
-;; (setq solarized-distinct-fringe-background t)
-;; (setq solarized-high-contrast-mode-line t)
 
 ;; Turn off syntax highlighting
 (global-font-lock-mode t)
 ;; Except for Org mode
 (add-hook 'org-mode-hook 'font-lock-mode)
-
-
-
-
 
 (add-to-list 'load-path "~/.emacs.d/vendor/emacs-powerline")
 ;;(add-to-list 'load-path "~/.emacs.d/elpa/")
@@ -52,9 +31,7 @@
 (powerline-default-theme)
 (require 'git)
 
-
 ;;(setq powerline-arrow-shape 'arrow)   ;; the default
-
 
 (require 'helm-config)
 (global-set-key (kbd "M-x") #'helm-M-x)
@@ -65,13 +42,10 @@
 
 (setq pdf-info-epdfinfo-program "/usr/local/bin/epdfinfo")
 
-;; (pdf-tools-install)
-
 (menu-bar-mode -1)
 (toggle-scroll-bar -1)
 (tool-bar-mode -1)
 (setq frame-title-format "")
-
 
 
 (custom-set-variables
@@ -80,9 +54,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ansi-color-faces-vector
-   [default bold shadow italic underline bold bold-italic bold])
+   [default default default italic underline success warning error])
  '(ansi-color-names-vector
-   (vector "#eaeaea" "#d54e53" "#b9ca4a" "#e7c547" "#7aa6da" "#c397d8" "#70c0b1" "#424242"))
+   ["black" "red3" "ForestGreen" "yellow3" "blue" "magenta3" "DeepSkyBlue" "gray50"])
  '(compilation-message-face (quote default))
  '(cua-global-mark-cursor-color "#2aa198")
  '(cua-normal-cursor-color "#657b83")
@@ -126,7 +100,7 @@
     ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
  '(package-selected-packages
    (quote
-    (magit leuven-theme material-theme noctilux-theme monokai-theme hc-zenburn-theme zenburn-theme color-theme-sanityinc-tomorrow helm-core sublime-themes solarized-theme powerline pdf-tools highlight-current-line helm greymatters-theme go-mode git elfeed-org auctex anti-zenburn-theme angular-mode)))
+    (helm-projectile projectile magit leuven-theme helm-core powerline helm go-mode git elfeed-org auctex angular-mode)))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
