@@ -14,6 +14,13 @@
 
 ;; (global-linum-mode 1)
 
+;; startup dashboard
+(require 'dashboard)
+(dashboard-setup-startup-hook)
+
+;;(set-frame-font "Inconsolata-14")
+(set-frame-font "DejaVu Sans Mono-14")
+
 ;; Turn off syntax highlighting
 (global-font-lock-mode 0)
 ;; Except for Org mode
@@ -29,6 +36,9 @@
 
 ;;(setq powerline-arrow-shape 'arrow)   ;; the default
 
+;; include column number in status bar
+(setq column-number-mode t)
+
 (require 'helm-config)
 (global-set-key (kbd "M-x") #'helm-M-x)
 (global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
@@ -39,10 +49,11 @@
 
 ;; (setq pdf-info-epdfinfo-program "/usr/local/bin/epdfinfo")
 
-;; (menu-bar-mode -1)
-;; (toggle-scroll-bar -1)
-;; (tool-bar-mode -1)
-;; (setq frame-title-format "")
+;; Remove all chrome, so to speak
+(menu-bar-mode -1)
+(toggle-scroll-bar -1)
+(tool-bar-mode -1)
+(setq frame-title-format "")
 
 
 ;; (setq rcirc-server-alist
@@ -55,10 +66,18 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (yaml-mode tablist powerline magit leuven-theme let-alist go-projectile git ggtags geben-helm-projectile elfeed-org angular-mode))))
+    (dashboard xterm-color doom-themes material-theme kaolin-themes yaml-mode tablist powerline magit leuven-theme let-alist go-projectile git ggtags geben-helm-projectile elfeed-org angular-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+
+
+;;(load-theme 'kaolin-light t)
+;;(load-theme 'material-light t)
+(load-theme 'material t)
+;;(load-theme 'doom-nord-light t)
+;;(load-theme 'doom-opera-light t)
