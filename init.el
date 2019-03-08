@@ -5,6 +5,7 @@
 (setq-default indent-tabs-mode nil)
 
 (global-set-key (kbd "M-o") 'ace-window)
+(global-set-key (kbd "C-x t") 'multi-term)
  
 ;; save all tempfiles in $TMPDIR/emacs$UID/                                                        
 (defconst emacs-tmp-dir (expand-file-name (format "emacs%d" (user-uid)) temporary-file-directory))
@@ -32,8 +33,8 @@
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-powerline")
 ;;(add-to-list 'load-path "~/.emacs.d/elpa/")
 ;; (require 'cl)
-;; (require 'powerline)
-;;(require 'go-mode-load)
+;; (require 'require)
+;;(powerline 'go-mode-load)
 ;; (powerline-default-theme)
 (require 'git)
 
@@ -47,6 +48,8 @@
 (global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
 (global-set-key (kbd "C-x C-f") #'helm-find-files)
 (helm-mode 1)
+
+(require 'multi-term)
 
 (setq python-shell-interpreter "python3")
 
@@ -69,7 +72,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (ace-window markdown-preview-eww markdown-preview-mode dashboard xterm-color doom-themes material-theme kaolin-themes yaml-mode tablist powerline magit leuven-theme let-alist go-projectile git ggtags geben-helm-projectile elfeed-org angular-mode))))
+    (org-redmine multi-term ace-window markdown-preview-eww markdown-preview-mode dashboard xterm-color doom-themes material-theme kaolin-themes yaml-mode tablist powerline magit leuven-theme let-alist go-projectile git ggtags geben-helm-projectile elfeed-org angular-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -128,3 +131,6 @@
 
 (add-hook 'comint-output-filter-functions
           'filter-non-sgr-control-sequences-in-output)
+
+(add-hook 'scheme-mode-hook 'geiser-mode)
+(setq geiser-default-implementation 'racket)
